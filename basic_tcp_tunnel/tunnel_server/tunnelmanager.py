@@ -2,9 +2,9 @@ from colorama import Fore, Style
 
 import select
 
-from common.connection.tcpconnection import TCPConnection
-from config.srvconf import SERVICE_PUBLIC_IP, DEFAULT_ACCEPTED_USER, SERVICE_PUBLIC_LISTEN_PORT, ACCEPT_TIMEOUT
-from tunnel_server.tunnel.tcptunnelsrv import TCPTunnelSrv
+from basic_tcp_tunnel.common.connection.tcpconnection import TCPConnection
+from basic_tcp_tunnel.config.srvconf import SERVICE_PUBLIC_IP, DEFAULT_ACCEPTED_USER, SERVICE_PUBLIC_LISTEN_PORT, ACCEPT_TIMEOUT
+from basic_tcp_tunnel.tunnel_server.tunnel.tcptunnelsrv import TCPTunnelSrv
 
 
 class TunnelManager:

@@ -1,10 +1,9 @@
-from config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT
+from basic_tcp_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT
+from basic_tcp_tunnel.config.srvconf import SERVICE_PUBLIC_LISTEN_PORT
 
-from config.srvconf import SERVICE_PUBLIC_LISTEN_PORT
-
-from tunnel_server.stats.tunnelstatssrv import TCPTunnelStatsSrv
-from tunnel_server.tunnelmanager import TunnelManager
-from tunnel_server.upnp.upnpservice import BasicUPnPService
+from basic_tcp_tunnel.tunnel_server.stats.tunnelstatssrv import TCPTunnelStatsSrv
+from basic_tcp_tunnel.tunnel_server.tunnelmanager import TunnelManager
+from basic_tcp_tunnel.tunnel_server.upnp.upnpservice import BasicUPnPService
 
 
 class TunnelService:

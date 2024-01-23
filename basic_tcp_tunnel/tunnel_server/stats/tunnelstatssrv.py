@@ -1,8 +1,8 @@
 import locale
 import time
 
-from config.conf import MAX_SHOW_STATS_RATE
-from common.helpers.formatters import bytes2human
+from basic_tcp_tunnel.config.conf import MAX_SHOW_STATS_RATE
+from basic_tcp_tunnel.common.helpers.formatters import bytes2human
 
 
 class TCPTunnelStatsSrv:

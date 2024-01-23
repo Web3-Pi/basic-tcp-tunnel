@@ -2,9 +2,9 @@ import sys
 
 import select
 
-from common.connection.tcpconnection import TCPConnection
-from common.connection.tcpforwarder import TCPForwarder
-from tunnel_client.stats.tunnelstatscli import TCPTunnelStatsCli
+from basic_tcp_tunnel.common.connection.tcpconnection import TCPConnection
+from basic_tcp_tunnel.common.connection.tcpforwarder import TCPForwarder
+from basic_tcp_tunnel.tunnel_client.stats.tunnelstatscli import TCPTunnelStatsCli
 
 
 class TCPTunnelCli:

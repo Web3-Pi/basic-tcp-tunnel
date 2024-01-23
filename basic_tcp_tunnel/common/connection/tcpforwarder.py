@@ -2,7 +2,7 @@ from threading import Thread
 
 import select
 
-from tunnel_client.stats.tunnelstatscli import TCPTunnelStatsCli
+from basic_tcp_tunnel.tunnel_client.stats.tunnelstatscli import TCPTunnelStatsCli
 
 
 class TCPForwarder:

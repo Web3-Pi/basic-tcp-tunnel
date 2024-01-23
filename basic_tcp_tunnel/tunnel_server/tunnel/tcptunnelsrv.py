@@ -3,11 +3,11 @@ import select
 
 from colorama import Fore, Style
 
-from common.connection.tcpconnection import TCPConnection
-from common.connection.tcpforwarder import TCPForwarder
+from basic_tcp_tunnel.common.connection.tcpconnection import TCPConnection
+from basic_tcp_tunnel.common.connection.tcpforwarder import TCPForwarder
 
-from config.srvconf import TUNNEL_KEEPALIVE_DELAY, TUNNEL_INTERRUPT_POLL_DELAY
-from tunnel_server.stats.tunnelstatssrv import TCPTunnelStatsSrv
+from basic_tcp_tunnel.config.srvconf import TUNNEL_KEEPALIVE_DELAY, TUNNEL_INTERRUPT_POLL_DELAY
+from basic_tcp_tunnel.tunnel_server.stats.tunnelstatssrv import TCPTunnelStatsSrv
 
 
 class TCPTunnelSrv:
