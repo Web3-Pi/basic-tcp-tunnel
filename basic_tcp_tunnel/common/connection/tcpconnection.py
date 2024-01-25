@@ -20,6 +20,7 @@ class TCPConnection:
     @classmethod
     def create_listen_socket(cls, listen_port: int):
         s_srv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s_srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s_srv.bind(('0.0.0.0', listen_port))
         s_srv.listen(1)
 
