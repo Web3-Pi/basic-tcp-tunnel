@@ -1,17 +1,17 @@
-from threading import Thread
-
 import select
 
-from basic_tcp_tunnel.tunnel_client.stats.tunnelstatscli import TCPTunnelStatsCli
+from threading import Thread
+
+from basic_tcp_tunnel.common.stats.tunnelstats import TCPTunnelStats
 
 
 class TCPForwarder:
 
-    def __init__(self, stats: TCPTunnelStatsCli):
+    def __init__(self, stats: TCPTunnelStats):
         self.stats = stats
 
     def forward_impl(self, s_src, s_dst):
-        no = self.stats.num_connections
+        # no = self.stats.num_connections
         self.stats.register_new_connection()
 
         # print(f"FORWARDER THREAD IMPL: TH START {no}")
@@ -29,12 +29,12 @@ class TCPForwarder:
                     break
 
                 if s == s_src:
-                    # print(f"LOCAL <-- {len(data)} <-- TUNNEL")
+                    # print(f"LOCAL <-- {len(data)} <-- REMOTE")
                     # print(data)
                     s_dst.sendall(data)
                     self.stats.register_inbound_packet(data)
                 elif s == s_dst:
-                    # print(f"LOCAL --> {len(data)} --> TUNNEL")
+                    # print(f"LOCAL --> {len(data)} --> REMOTE")
                     # print(data)
                     s_src.sendall(data)
                     self.stats.register_outbound_packet(data)

@@ -1,19 +1,20 @@
 from basic_tcp_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT
 from basic_tcp_tunnel.config.srvconf import SERVICE_PUBLIC_LISTEN_PORT
 
-from basic_tcp_tunnel.tunnel_server.stats.tunnelstatssrv import TCPTunnelStatsSrv
+from basic_tcp_tunnel.common.stats.tunnelstats import TCPTunnelStats
+
 from basic_tcp_tunnel.tunnel_server.tunnelmanager import TunnelManager
 from basic_tcp_tunnel.tunnel_server.upnp.upnpservice import BasicUPnPService
 
 
-class TunnelService:
+class ServerTunnelService:
 
     def __init__(self, tunnel_listen_port: int = TUNNEL_ESTABLISH_PORT,
                  proxy_establish_port: int = PROXY_ESTABLISH_PORT):
 
         print("MAIN SERVICE: starting -> creating tunnel manager")
         self.tunnel_manager = TunnelManager(tunnel_listen_port, proxy_establish_port)
-        self.stats = TCPTunnelStatsSrv()
+        self.stats = TCPTunnelStats("Forwarded")
 
     def run_forever(self):
         upnp_service = BasicUPnPService(TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT, SERVICE_PUBLIC_LISTEN_PORT)

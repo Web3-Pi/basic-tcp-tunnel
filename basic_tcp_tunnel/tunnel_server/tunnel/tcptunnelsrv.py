@@ -5,9 +5,9 @@ from colorama import Fore, Style
 
 from basic_tcp_tunnel.common.connection.tcpconnection import TCPConnection
 from basic_tcp_tunnel.common.connection.tcpforwarder import TCPForwarder
+from basic_tcp_tunnel.common.stats.tunnelstats import TCPTunnelStats
 
 from basic_tcp_tunnel.config.srvconf import TUNNEL_KEEPALIVE_DELAY, TUNNEL_INTERRUPT_POLL_DELAY
-from basic_tcp_tunnel.tunnel_server.stats.tunnelstatssrv import TCPTunnelStatsSrv
 
 
 class TCPTunnelSrv:
@@ -42,7 +42,7 @@ class TCPTunnelSrv:
 
         return cli_proxy_sock
 
-    def run_forever(self, stats: TCPTunnelStatsSrv):
+    def run_forever(self, stats: TCPTunnelStats):
 
         print(f"TCP TUNNEL: New tunnel established. Sharing external address: "
               "" + Fore.LIGHTGREEN_EX + f"{self.ext_ip}:{self.ext_port}" + Style.RESET_ALL)

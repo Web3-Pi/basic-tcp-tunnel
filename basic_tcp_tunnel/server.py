@@ -6,13 +6,13 @@ if os.path.dirname(os.path.dirname(os.path.abspath(__file__))) not in sys.path:
 
 import colorama
 
-from basic_tcp_tunnel.tunnel_server.tunnelservice import TunnelService
+from basic_tcp_tunnel.tunnel_server.servertunnelservice import ServerTunnelService
 
 
 def main():
     colorama.init()
 
-    service = TunnelService()
+    service = ServerTunnelService()
     service.run_forever()
 
 

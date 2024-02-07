@@ -4,7 +4,7 @@ import select
 
 from basic_tcp_tunnel.common.connection.tcpconnection import TCPConnection
 from basic_tcp_tunnel.common.connection.tcpforwarder import TCPForwarder
-from basic_tcp_tunnel.tunnel_client.stats.tunnelstatscli import TCPTunnelStatsCli
+from basic_tcp_tunnel.common.stats.tunnelstats import TCPTunnelStats
 
 
 class TCPTunnelCli:
@@ -20,7 +20,7 @@ class TCPTunnelCli:
         self.remote_service_host = remote_service_host
         self.proxy_establish_port = proxy_establish_port
 
-        self.stats = TCPTunnelStatsCli()
+        self.stats = TCPTunnelStats("Received")
 
     def wait_for_request(self):
         while True:

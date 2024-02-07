@@ -2,12 +2,15 @@ import locale
 import time
 
 from basic_tcp_tunnel.config.conf import MAX_SHOW_STATS_RATE
+
 from basic_tcp_tunnel.common.helpers.formatters import bytes2human
 
 
-class TCPTunnelStatsCli:
+class TCPTunnelStats:
 
-    def __init__(self, print_updates: bool = True):
+    def __init__(self, prefix: str, print_updates: bool = True):
+        self.prefix = prefix
+
         self.num_connections = 0
         self.inbound_bytes = 0
         self.outbound_bytes = 0
@@ -26,7 +29,7 @@ class TCPTunnelStatsCli:
                 out_speed = bytes2human(self.outbound_bytes / (now - self.started_at))
 
                 print(f"\rSTATS:      "
-                      f"Received connections {locale.format_string('%d', self.num_connections)}, "
+                      f"{self.prefix} {locale.format_string('%d', self.num_connections)} connections, "
                       f"Inbound {bytes2human(self.inbound_bytes)} [@ avg speed: {in_speed}/s], "
                       f"Outbound {bytes2human(self.outbound_bytes)} [@ avg speed: {out_speed}/s]"
                       f"          ", end="")
