@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "basic-tcp-tunnel"
+name = "web3pi-tunnel"
 version = "0.1a1"
 description = "A Web3 Pi tunnel - a basic tcp reverse tunnel"
 authors = []
@@ -25,5 +25,5 @@ upnpclient = ">=1.0.3"
 whatismyip = ">=2022.7.10"
 
 [tool.poetry.scripts]
-client = "basic_tcp_tunnel.client:main"
-server = "basic_tcp_tunnel.server:main"
+web3pi_tunnel_client = "web3pi_tunnel.client:main"
+web3pi_tunnel_server = "web3pi_tunnel.server:main"
