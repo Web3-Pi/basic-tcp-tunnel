@@ -2,9 +2,10 @@ from colorama import Fore, Style
 
 import select
 
-from basic_tcp_tunnel.common.connection.tcpconnection import TCPConnection
-from basic_tcp_tunnel.config.srvconf import SERVICE_PUBLIC_IP, DEFAULT_ACCEPTED_USER, SERVICE_PUBLIC_LISTEN_PORT, ACCEPT_TIMEOUT
-from basic_tcp_tunnel.tunnel_server.tunnel.tcptunnelsrv import TCPTunnelSrv
+from web3pi_tunnel.common.connection.tcpconnection import TCPConnection
+from web3pi_tunnel.config.srvconf import SERVICE_PUBLIC_IP, SERVICE_PUBLIC_LISTEN_PORT, ACCEPT_TIMEOUT
+from web3pi_tunnel.config.conf import TUNNEL_SERVICE_AUTH_KEY
+from web3pi_tunnel.tunnel_server.tunnel.tcptunnelsrv import TCPTunnelSrv
 
 
 class TunnelManager:
@@ -13,7 +14,7 @@ class TunnelManager:
         self.service_pub_ip = SERVICE_PUBLIC_IP
         self.service_pub_port = SERVICE_PUBLIC_LISTEN_PORT
 
-        self.allowed_user_api_key = DEFAULT_ACCEPTED_USER
+        self.allowed_user_api_key = TUNNEL_SERVICE_AUTH_KEY
 
         self.tunnel_conf_listen_port = tunnel_conf_listen_port
         self.proxy_establish_port = proxy_establish_port

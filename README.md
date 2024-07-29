@@ -1,23 +1,32 @@
-# Basic TCP Tunnel
+# WEb3Pi Tunnel
 PoC Python implementation of a basic TCP tunnel. Primary purpose: provide a public IP to clients behind NATs.
 
-It was initially developed on **Windows 10 Pro** with **PyCharm 2022.3.1 (Community Edition)** and **Python 3.11** alongside the [Web3 Reverse Proxy](https://github.com/jimmyisthis/web3-reverse-proxy).
+It was initially developed alongside the [Web3Pi Proxy](https://github.com/Web3-Pi/web3-reverse-proxy).
 
+## Setup
 
-## Configure and Run
-To configure and run this project, follow this [README.md](https://github.com/jimmyisthis/web3-reverse-proxy/blob/main/README.md).
+Simply install `web3pi-tunnel` package using your Python package manager, using **pip** for example:
+
+```bash
+pip install web3pi-tunnel
+```
+
+## Configuration
+
+Provide `.env` file or set the system environments with the following entries.
 
 ### Client
-- Add a valid server address to the `config/cliconf.py` file
-- Make sure that the server is running
-- Activate venv
-- Run `basic_tcp_tunnel/client.py`
+
+- `TUNNEL_SERVICE_HOST` - the network address of the tunnel server
+- `CLIENT_SERVICE_HOST` - the network address of the client target service
+- `CLIENT_SERVICE_PORT` - the port of the client target service
+- `TUNNEL_ESTABLISH_PORT` - the port of the tunnel server
+- `TUNNEL_SERVICE_AUTH_KEY` - the api key to authenticate at the tunnel server
 
 ### Server
-- Add a valid local address to the `config/srvconf.py` file (preferably a **public ip**)
-- Activate venv
-- Run `basic_tcp_tunnel/server.py`
 
-## TODO
-- Warnings
-  - Response parser may fail (only rudimentary parsing was implemented)
+- `SERVICE_PUBLIC_IP` - the network address of the tunnel server
+- `SERVICE_PUBLIC_LISTEN_PORT` - the port of tunnel server for external web3 users
+- `TUNNEL_ESTABLISH_PORT` - the port of the tunnel server for the tunnel client
+- `PROXY_ESTABLISH_PORT` - the port of the tunnel server for stats
+- `TUNNEL_SERVICE_AUTH_KEY` - the api key to authenticate the tunnel client

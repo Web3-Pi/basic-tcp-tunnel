@@ -1,8 +1,8 @@
 from colorama import Fore, Style
 
-from basic_tcp_tunnel.config.srvconf import UPNP_DISCOVERY_TIMEOUT, UPNP_LEASE_TIME, USE_UPNP, PUBLIC_SERVICE
-from basic_tcp_tunnel.tunnel_server.upnp.ipgetter import my_public_ip
-from basic_tcp_tunnel.tunnel_server.upnp.upnpportmapper import BasicUPnPPortMapper
+from web3pi_tunnel.config.srvconf import UPNP_DISCOVERY_TIMEOUT, UPNP_LEASE_TIME, USE_UPNP, PUBLIC_SERVICE
+from web3pi_tunnel.tunnel_server.upnp.ipgetter import my_public_ip
+from web3pi_tunnel.tunnel_server.upnp.upnpportmapper import BasicUPnPPortMapper
 
 
 class BasicUPnPService:

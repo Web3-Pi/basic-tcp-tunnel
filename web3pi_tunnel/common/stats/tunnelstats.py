@@ -1,9 +1,9 @@
 import locale
 import time
 
-from basic_tcp_tunnel.config.conf import MAX_SHOW_STATS_RATE
+from web3pi_tunnel.config.conf import MAX_SHOW_STATS_RATE
 
-from basic_tcp_tunnel.common.helpers.formatters import bytes2human
+from web3pi_tunnel.common.helpers.formatters import bytes2human
 
 
 class TCPTunnelStats:

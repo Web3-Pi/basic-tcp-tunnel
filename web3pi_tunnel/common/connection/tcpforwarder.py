@@ -2,7 +2,7 @@ import select
 
 from threading import Thread
 
-from basic_tcp_tunnel.common.stats.tunnelstats import TCPTunnelStats
+from web3pi_tunnel.common.stats.tunnelstats import TCPTunnelStats
 
 
 class TCPForwarder:

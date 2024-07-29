@@ -1,10 +1,10 @@
-from basic_tcp_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT
-from basic_tcp_tunnel.config.srvconf import SERVICE_PUBLIC_LISTEN_PORT
+from web3pi_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT
+from web3pi_tunnel.config.srvconf import SERVICE_PUBLIC_LISTEN_PORT
 
-from basic_tcp_tunnel.common.stats.tunnelstats import TCPTunnelStats
+from web3pi_tunnel.common.stats.tunnelstats import TCPTunnelStats
 
-from basic_tcp_tunnel.tunnel_server.tunnelmanager import TunnelManager
-from basic_tcp_tunnel.tunnel_server.upnp.upnpservice import BasicUPnPService
+from web3pi_tunnel.tunnel_server.tunnelmanager import TunnelManager
+from web3pi_tunnel.tunnel_server.upnp.upnpservice import BasicUPnPService
 
 
 class ServerTunnelService:

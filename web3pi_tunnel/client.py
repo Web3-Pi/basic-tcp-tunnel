@@ -6,12 +6,11 @@ if os.path.dirname(os.path.dirname(os.path.abspath(__file__))) not in sys.path:
 
 import colorama
 
-from basic_tcp_tunnel.tunnel_client.clienttunnelservice import ClientTunnelService
-from basic_tcp_tunnel.tunnel_client.servicedescr import ServiceDescr
+from web3pi_tunnel.tunnel_client.clienttunnelservice import ClientTunnelService
+from web3pi_tunnel.tunnel_client.servicedescr import ServiceDescr
 
-from basic_tcp_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT
-from basic_tcp_tunnel.config.cliconf import CLIENT_SERVICE_HOST, CLIENT_SERVICE_PORT, TUNNEL_SERVICE_HOST, \
-    TUNNEL_SERVICE_AUTH_KEY
+from web3pi_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT, TUNNEL_SERVICE_AUTH_KEY
+from web3pi_tunnel.config.cliconf import CLIENT_SERVICE_HOST, CLIENT_SERVICE_PORT, TUNNEL_SERVICE_HOST
 
 
 def main():

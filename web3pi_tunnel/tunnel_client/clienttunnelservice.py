@@ -3,10 +3,10 @@ import time
 
 from colorama import Fore, Style
 
-from basic_tcp_tunnel.tunnel_client.servicedescr import ServiceDescr
-from basic_tcp_tunnel.common.connection.tcpconnection import TCPConnection
-from basic_tcp_tunnel.tunnel_client.tunnel.tcptunnelcli import TCPTunnelCli
-from basic_tcp_tunnel.config.cliconf import RETRY_TIMEOUT
+from web3pi_tunnel.tunnel_client.servicedescr import ServiceDescr
+from web3pi_tunnel.common.connection.tcpconnection import TCPConnection
+from web3pi_tunnel.tunnel_client.tunnel.tcptunnelcli import TCPTunnelCli
+from web3pi_tunnel.config.cliconf import RETRY_TIMEOUT
 
 
 class ClientTunnelService:
