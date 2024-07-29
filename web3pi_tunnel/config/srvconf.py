@@ -19,6 +19,6 @@ TUNNEL_INTERRUPT_POLL_DELAY = 4.0
 
 # UPnP
 PUBLIC_SERVICE = True
-USE_UPNP = True and PUBLIC_SERVICE
+USE_UPNP = env.get("USE_UPNP", "False").lower() in ['true', '1', 't', 'y', 'yes']
 UPNP_DISCOVERY_TIMEOUT = 0.5
 UPNP_LEASE_TIME = 1 * 3600

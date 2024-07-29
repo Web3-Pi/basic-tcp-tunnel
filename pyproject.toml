@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "web3pi-tunnel"
-version = "0.1a2"
+version = "0.1"
 description = "Web3 Pi tunnel - a basic tcp reverse tunnel"
 authors = []
 license = "GNU GENERAL PUBLIC LICENSE Version 3"

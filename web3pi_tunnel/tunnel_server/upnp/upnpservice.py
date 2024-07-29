@@ -22,23 +22,26 @@ class BasicUPnPService:
         if USE_UPNP:
             print("Initializing UPnP service")
             self.upnp = BasicUPnPPortMapper()
-            self.upnp.initialize(timeout)
+            upnp_initialized = self.upnp.initialize(timeout)
 
-            print("UPnP service: Trying to map ports via UPnP")
-
-            ports = [self.tunnel_listen_port, self.proxy_establish_port, self.public_listen_port]
-            rules = ["Tunnel Conf Port", "Proxy Conf Port", "Public Listen Port"]
-            res = self.upnp.add_multiple_mappings(ports, rules, UPNP_LEASE_TIME)
-
-            if not res:
-                print("UPnP service: port forwarding -> FAILURE")
+            if not upnp_initialized:
+                print("UPnP service: Failed to detect a device !!")
             else:
-                print(f"UPnP service: All ports forwarded successfully")
-                print(f"    Tunnel configuration port:  {self.tunnel_listen_port}")
-                print(f"    Proxy configuration port:   {self.proxy_establish_port}")
-                print(f"    Public service listen port: {self.public_listen_port}")
+                print("UPnP service: Trying to map ports via UPnP")
 
-                ip = self.upnp.get_external_ip_address()
+                ports = [self.tunnel_listen_port, self.proxy_establish_port, self.public_listen_port]
+                rules = ["Tunnel Conf Port", "Proxy Conf Port", "Public Listen Port"]
+                res = self.upnp.add_multiple_mappings(ports, rules, UPNP_LEASE_TIME)
+
+                if not res:
+                    print("UPnP service: port forwarding -> FAILURE")
+                else:
+                    print(f"UPnP service: All ports forwarded successfully")
+                    print(f"    Tunnel configuration port:  {self.tunnel_listen_port}")
+                    print(f"    Proxy configuration port:   {self.proxy_establish_port}")
+                    print(f"    Public service listen port: {self.public_listen_port}")
+
+                    ip = self.upnp.get_external_ip_address()
 
         if ip is None:
             if PUBLIC_SERVICE:
