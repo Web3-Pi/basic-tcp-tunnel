@@ -9,9 +9,8 @@ import colorama
 from web3pi_tunnel.tunnel_client.clienttunnelservice import ClientTunnelService
 from web3pi_tunnel.tunnel_client.servicedescr import ServiceDescr
 
-from web3pi_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT
-from web3pi_tunnel.config.cliconf import CLIENT_SERVICE_HOST, CLIENT_SERVICE_PORT, TUNNEL_SERVICE_HOST, \
-    TUNNEL_SERVICE_AUTH_KEY
+from web3pi_tunnel.config.conf import TUNNEL_ESTABLISH_PORT, PROXY_ESTABLISH_PORT, TUNNEL_SERVICE_AUTH_KEY
+from web3pi_tunnel.config.cliconf import CLIENT_SERVICE_HOST, CLIENT_SERVICE_PORT, TUNNEL_SERVICE_HOST
 
 
 def main():

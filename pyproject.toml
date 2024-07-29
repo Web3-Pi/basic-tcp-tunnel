@@ -23,6 +23,7 @@ python = "^3.10"
 colorama = ">=0.4.6"
 upnpclient = ">=1.0.3"
 whatismyip = ">=2022.7.10"
+python-dotenv = ">=1.0.1"
 
 [tool.poetry.scripts]
 web3pi_tunnel_client = "web3pi_tunnel.client:main"
